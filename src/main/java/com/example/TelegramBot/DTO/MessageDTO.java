@@ -2,16 +2,16 @@ package com.example.TelegramBot.DTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MessDTO {
+public class MessageDTO {
     @JsonProperty("authorId")
     private String authorId;
     @JsonProperty("text")
     private String text;
 
-    public MessDTO() {
+    public MessageDTO() {
     }
 
-    public MessDTO(String authorId, String text) {
+    public MessageDTO(String authorId, String text) {
         this.authorId = authorId;
         this.text = text;
     }

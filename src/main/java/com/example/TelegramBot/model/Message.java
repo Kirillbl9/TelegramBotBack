@@ -6,17 +6,17 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Mess {
+public class Message {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private Long authorId;
     private String text;
 
-    public Mess() {
+    public Message() {
     }
 
-    public Mess(Long authorId, String text) {
+    public Message(Long authorId, String text) {
         this.authorId = authorId;
         this.text = text;
     }

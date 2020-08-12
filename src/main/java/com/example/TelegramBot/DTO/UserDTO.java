@@ -1,9 +1,9 @@
-package com.example.TelegramBot.model;
+package com.example.TelegramBot.DTO;
 
-public class User {
+public class UserDTO {
     private String status;
 
-    public User(String status) {
+    public UserDTO(String status) {
         this.status = status;
     }
 

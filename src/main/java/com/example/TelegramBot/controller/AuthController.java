@@ -1,6 +1,6 @@
 package com.example.TelegramBot.controller;
 
-import com.example.TelegramBot.model.User;
+import com.example.TelegramBot.DTO.UserDTO;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +13,7 @@ public class AuthController {
 
     @GetMapping(produces = "application/json")
     @RequestMapping({ "/validateLogin" })
-    public User validateLogin() {
-        return new User("User successfully authenticated");
+    public UserDTO validateLogin() {
+        return new UserDTO("User successfully authenticated");
     }
 }
