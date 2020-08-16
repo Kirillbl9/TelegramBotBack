@@ -30,23 +30,28 @@ public class MessageServiceImplementation implements MessageService {
         }
         logger.debug("Call find all users by id method");
         List<Message> listMessage = messageRepository.findAllByAuthorId(id);
-        //listDTOMessage
-        return ofList(listMessage);
+        List<MessageDTO> listMessageDTO = new ArrayList<>();
+        for (Message message : listMessage) {
+            listMessageDTO.add(of(message));
+        }
+        return listMessageDTO;
     }
 
     @Override
     public List<MessageDTO> findAll() {
         logger.debug("Call find all users method");
         List<Message> listMessage = messageRepository.findAll();
-        //listDTOMessage
-        return ofList(listMessage);
+        List<MessageDTO> listMessageDTO = new ArrayList<>();
+        for (Message message : listMessage) {
+            listMessageDTO.add(of(message));
+        }
+        return listMessageDTO;
     }
 
-    private List<MessageDTO> ofList(List<Message> messageList){
-        List<MessageDTO> messageDTOs = new ArrayList<>();
-        for (Message x : messageList) {
-            messageDTOs.add(new MessageDTO(x.getAuthorId().toString(), x.getText()));
-        }
-        return messageDTOs;
+    private MessageDTO of(Message message){
+        MessageDTO messageDTO = new MessageDTO();
+        messageDTO.setAuthorId(message.getAuthorId());
+        messageDTO.setText(message.getText());
+        return messageDTO;
     }
 }

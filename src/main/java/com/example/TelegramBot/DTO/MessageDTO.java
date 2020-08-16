@@ -4,23 +4,23 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class MessageDTO {
     @JsonProperty("authorId")
-    private String authorId;
+    private Long authorId;
     @JsonProperty("text")
     private String text;
 
     public MessageDTO() {
     }
 
-    public MessageDTO(String authorId, String text) {
+    public MessageDTO(Long authorId, String text) {
         this.authorId = authorId;
         this.text = text;
     }
 
-    public String getAuthorId() {
+    public Long getAuthorId() {
         return authorId;
     }
 
-    public void setAuthorId(String authorId) {
+    public void setAuthorId(Long authorId) {
         this.authorId = authorId;
     }
 
